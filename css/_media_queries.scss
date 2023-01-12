@@ -1,4 +1,4 @@
-h1{color: red;}
+
 
 body{
     display: flex;
@@ -147,8 +147,6 @@ body{
 }*/
 
 @media all and (min-width: 576px) {
-    h1{color: blue;
-    background-color: black;}
 
     .bloque{
         flex-direction: row;
@@ -174,7 +172,6 @@ body{
 }
 
 @media all and (min-width: 992px) {
-    h1{color: green;}
     .header{
         display: grid;
         grid-template-areas: "sociales titulo titulo titulo google google";

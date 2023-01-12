@@ -1,0 +1,230 @@
+h1{color: red;}
+
+body{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.titulo_principal{
+    padding: 1rem;
+
+    a{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.Google_Search{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sociales{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        div a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+}
+
+.aside{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1rem;
+
+    h3{
+        &:hover{
+            background-color: darkslategray;
+            filter: brightness(200%);
+        }
+    }
+
+}
+
+.bloque{
+    display: none;
+    margin: 1rem;
+    padding: 0.5rem;
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+
+        li{
+            margin: 1rem 0.5rem;
+            padding: 0.5rem 2rem;
+
+            a{
+                display: inline-block;
+                text-align: center;
+            }
+
+        }
+    }
+}
+
+.activo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    div{
+        width: 100%;
+    }
+}
+
+.titulo{
+    grid-area: titulo;
+}
+
+.descripcion{
+    grid-area: descripcion;
+    text-align: center;
+}
+
+.enlaces{
+    grid-area: enlaces;
+}
+
+.contenedor_editor{
+    grid-area: contenedor_editor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.HTML, .CSS, .JS{
+    display: flex;
+    flex-direction: column;
+}
+
+.descripcion{
+    padding: 1rem 0rem 0rem 0rem;
+}
+
+/*#block_de_notas, #editor_de_codigo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}*/
+
+@media all and (min-width: 576px) {
+    h1{color: blue;
+    background-color: black;}
+
+    .bloque{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        h3{
+            text-align: center;
+        }
+        ul{
+            flex-direction: row;
+            li{
+                min-width: 30%;
+
+                a{
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media all and (min-width: 992px) {
+    h1{color: green;}
+    .header{
+        display: grid;
+        grid-template-areas: "sociales titulo titulo titulo google google";
+    }
+
+    .titulo_principal{
+        grid-area: titulo;
+    }
+
+    .Google_Search{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        grid-area: google;
+    }
+
+    .sociales{
+        grid-area: sociales;
+    }
+
+    .contenedor{
+        display: grid;
+        grid-template-areas: "aside bloque";
+        grid-template-columns: 1fr 4fr;
+        gap: 1rem;
+    }
+    
+    .aside{
+        grid-area: aside;
+    }
+    
+    .bloque{
+        grid-area: bloque;
+    }
+
+    /*#google_y_sociales, #cnea, #personal, #ingles, #autos, #utilidades, #desarrollador, #python, #Java_Script, #ansys, #block_de_notas{
+        grid-template: 1.5fr 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+        grid-template-areas: "titulo titulo titulo titulo" "descripcion descripcion descripcion descripcion" "enlaces enlaces enlaces enlaces" "enlaces enlaces enlaces enlaces" "enlaces enlaces enlaces enlaces" "enlaces enlaces enlaces enlaces";
+    }*/
+
+
+    #editor_de_codigo{
+        grid-template: 1.5fr 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+        grid-template-areas: "titulo titulo titulo titulo" "descripcion descripcion descripcion descripcion" "contenedor_editor contenedor_editor contenedor_editor contenedor_editor" "contenedor_editor contenedor_editor contenedor_editor contenedor_editor" "contenedor_editor contenedor_editor contenedor_editor contenedor_editor" "contenedor_editor contenedor_editor contenedor_editor contenedor_editor";
+    }
+
+    .contenedor_editor{
+        grid-area: contenedor_editor;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+}
